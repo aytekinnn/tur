@@ -25,11 +25,13 @@ Kullanıcı Yönetimi
 Tur Operatörleri: Sisteme tur operatörü olarak kullanıcı eklenebilir.
 Kullanıcılar yalnızca kendilerine ait turları yönetebilir.
 Basit bir yetkilendirme mekanizması uygulandı.
+
 Güvenlik
 API isteklerinde API token doğrulaması yapılmaktadır.
 Token başına ID eklenmesi:
 Büyük veri optimizasyonu ve arama işlemlerinin hızlandırılması amacıyla yapılmıştır.
 Numeric alanlar üzerinde arama işlemleri bu yöntemle daha performanslı hale getirilmiştir.
+
 Teknik Gereksinimler
 Laravel Kullanımı
 Routing, Controllers, Eloquent ORM, ve Migrations kullanılarak API geliştirildi.
