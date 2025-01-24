@@ -1,23 +1,43 @@
-<p>
-Tur Oluşturma (Create): Yeni bir tur eklemek için bir endpoint eklendi. Gerekli bilgiler tur adı, açıklaması, konumu, başlangıç ve bitiş tarihleri, ve tur fiyatı olmalıdır alanları eklendi.
+API Özellikleri ve Gereksinimleri
+Tur Oluşturma (Create)
+Yeni bir tur eklemek için bir endpoint eklendi.
+Gereken alanlar:
+Tur Adı: Turu tanımlayan başlık.
+Açıklama: Tur hakkında detaylı bilgi.
+Konum: Turun düzenleneceği yer.
+Başlangıç ve Bitiş Tarihleri: Turun geçerli olduğu tarih aralığı.
+Fiyat: Turun ücreti.
 
-Tur Listeleme (Read): Tüm turları listelemek için bir endpoint eklendi. Ayrıca, belirli bir tarih aralığına göre turları filtreleyebilen bir özellik eklendi.
+Tur Listeleme (Read)
+Tüm turları listelemek için bir endpoint oluşturuldu.
+Belirli bir tarih aralığına göre turları filtreleme özelliği eklendi.
 
-Tur Güncelleme (Update): Var olan bir turun detaylarını güncellemek için bir endpoint eklendi.
+Tur Güncelleme (Update)
+Mevcut bir turun detaylarını güncellemek için bir endpoint eklendi.
 
-Tur Silme (Delete): Belirli bir turu sistemden silmek için bir endpoint eklendi.
+Tur Silme (Delete)
+Belirli bir turu sistemden silmek için bir endpoint oluşturuldu.
 
 Opsiyonel Gereksinimler
-Kullanıcı Yönetimi: Sisteme tur operatörü olarak kullanıcı ekleyebilme ve kullanıcıların yalnızca kendi turlarını yönetebilmelerini sağlayacak basit bir yetkilendirme mekanizması eklendi. <br>
-Güvenlik: API isteklerinde basit bir API token doğrulaması yapısını implemente edildi. <br><br>
+
+Kullanıcı Yönetimi
+Tur Operatörleri: Sisteme tur operatörü olarak kullanıcı eklenebilir.
+Kullanıcılar yalnızca kendilerine ait turları yönetebilir.
+Basit bir yetkilendirme mekanizması uygulandı.
+Güvenlik
+API isteklerinde API token doğrulaması yapılmaktadır.
+Token başına ID eklenmesi:
+Büyük veri optimizasyonu ve arama işlemlerinin hızlandırılması amacıyla yapılmıştır.
+Numeric alanlar üzerinde arama işlemleri bu yöntemle daha performanslı hale getirilmiştir.
 Teknik Gereksinimler
-Laravel'in temel özelliklerini (Routing, Controllers, Eloquent ORM, Migrations) kullanarak API'yi geliştirildi. <br>
-Veritabanı olarak MySQL, PostgreSQL veya SQLite kullanın. Laravel migrations kullanarak veritabanı şemasını oluşturuldu.
+Laravel Kullanımı
+Routing, Controllers, Eloquent ORM, ve Migrations kullanılarak API geliştirildi.
+Laravel migrations ile veritabanı şeması oluşturuldu.
+Veritabanı Seçenekleri
+MySQL, PostgreSQL veya SQLite desteklenmektedir.
 
-proje dosyası çekildikten sonra composer install yapmayı unutmayın! 
-gereksinimler yüklensin
+Proje kurulumu sonrası veritabanı bağlantı ayarları için .env dosyasını aşağıdaki gibi düzenleyin:
 
-.env dosyası oluşturun
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -25,13 +45,18 @@ DB_DATABASE=tour_project
 DB_USERNAME=root
 DB_PASSWORD=secret
 
-api için sanctum kurulu değil ise sanctum kurulumu yapın
+Kurulum Talimatları
+Proje dosyasını indirip çalışma ortamınıza alın.
+Gerekli bağımlılıkları yüklemek için aşağıdaki komutu çalıştırın:
+composer install
+
+Sanctum Kurulumu (Sanctum yüklü değilse):
+
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 php artisan migrate
 
-postman ile token gönderilirken token başına id ekleniyor bunun nedeni ise big data da optimizasyon sağlayıp hızlandırmak için numeric alan üzerinde aramaa amacı ile yapılmıştır.
-
-register yaparken şifreler hashlenip kaydediliyor ve token ile geri dönüyor
-onun dışındaki tüm işlemler crud işlemleri 
-
-</p>
+Şifreleme ve Token İşlemleri
+Kayıt (Register):
+Şifreler hashlenerek kaydedilir.
+Kayıt işlemi sonrası kullanıcıya bir token geri döner.
+Diğer işlemler CRUD operasyonları üzerinden gerçekleştirilir.
