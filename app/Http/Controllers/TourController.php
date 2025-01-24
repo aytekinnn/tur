@@ -20,10 +20,8 @@ class TourController extends Controller
             $query->whereBetween('start_date', [$startDate, $endDate]);
         }
 
-        // Tüm turları al
         $tours = $query->get();
 
-        // JSON formatında döndür
         return response()->json([
             'success' => true,
             'data' => $tours
