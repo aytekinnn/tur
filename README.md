@@ -26,5 +26,12 @@ DB_USERNAME=root
 DB_PASSWORD=secret
 
 api için sanctum kurulu değil ise sanctum kurulumu yapın
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+php artisan migrate
+
+postman ile token gönderilirken token başına id ekleniyor bunun nedeni ise big data da optimizasyon sağlayıp hızlandırma sağlamak.
+
+register yaparken şifreler hashlenip kaydediliyor ve token ile geri dönüyor
+onun dışındaki tüm işlemler crud işlemleri 
 
 </p>
