@@ -1,4 +1,5 @@
 API Özellikleri ve Gereksinimleri
+
 Tur Oluşturma (Create)
 Yeni bir tur eklemek için bir endpoint eklendi.
 Gereken alanlar:
