@@ -13,4 +13,18 @@ Güvenlik: API isteklerinde basit bir API token doğrulaması yapısını implem
 Teknik Gereksinimler
 Laravel'in temel özelliklerini (Routing, Controllers, Eloquent ORM, Migrations) kullanarak API'yi geliştirildi. <br>
 Veritabanı olarak MySQL, PostgreSQL veya SQLite kullanın. Laravel migrations kullanarak veritabanı şemasını oluşturuldu.
+
+proje dosyası çekildikten sonra composer install yapmayı unutmayın! 
+gereksinimler yüklensin
+
+.env dosyası oluşturun
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=tour_project
+DB_USERNAME=root
+DB_PASSWORD=secret
+
+api için sanctum kurulu değil ise sanctum kurulumu yapın
+
 </p>
