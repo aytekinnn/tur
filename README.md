@@ -29,7 +29,7 @@ api için sanctum kurulu değil ise sanctum kurulumu yapın
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 php artisan migrate
 
-postman ile token gönderilirken token başına id ekleniyor bunun nedeni ise big data da optimizasyon sağlayıp hızlandırma sağlamak.
+postman ile token gönderilirken token başına id ekleniyor bunun nedeni ise big data da optimizasyon sağlayıp hızlandırmak için numeric alan üzerinde aramaa amacı ile yapılmıştır.
 
 register yaparken şifreler hashlenip kaydediliyor ve token ile geri dönüyor
 onun dışındaki tüm işlemler crud işlemleri 
