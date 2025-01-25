@@ -52,6 +52,8 @@ Kurulum Talimatları
 Proje dosyasını indirip çalışma ortamınıza alın.
 Gerekli bağımlılıkları yüklemek için aşağıdaki komutu çalıştırın:
 composer install
+env dosyası oluşturun ve
+php artisan key:generate
 
 Sanctum Kurulumu (Sanctum yüklü değilse):
 
